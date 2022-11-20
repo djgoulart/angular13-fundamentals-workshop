@@ -41,4 +41,8 @@ export class CoursesComponent implements OnInit {
 
     }
   }
+
+  clearSelect(){
+    this.selectedCourse = null;
+  }
 }
