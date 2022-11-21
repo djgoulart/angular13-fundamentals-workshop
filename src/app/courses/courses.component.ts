@@ -25,7 +25,9 @@ export class CoursesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.courses = this.coursesService.courses
+    //this.courses = this.coursesService.courses
+    this.coursesService.all()
+      .subscribe((result: Course[]) => this.courses = result)
   }
 
   selectCourse(course) {
