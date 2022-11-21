@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from '../common/models/course';
+import { CoursesService } from '../common/services/courses.service';
 
 const emptyCourse: Course = {
   id: null,
@@ -17,27 +18,14 @@ const emptyCourse: Course = {
 export class CoursesComponent implements OnInit {
   selectedCourse = emptyCourse;
   originalTitle: string;
+  courses: Course[] = [];
 
-  courses: Course[] = [
-    {
-      id: '1',
-      title: 'Angular 13 Fundamentals',
-      description: 'Learn the fundamentals of Angular 13',
-      percentComplete: 26,
-      favorite: true
-    },
-    {
-      id: '2',
-      title: 'React Fundamentals',
-      description: 'Learn the fundamentals of React',
-      percentComplete: 95,
-      favorite: true
-    },
-  ];
 
-  constructor() { }
+  constructor(private coursesService: CoursesService) {
+  }
 
   ngOnInit(): void {
+    this.courses = this.coursesService.courses
   }
 
   selectCourse(course) {
