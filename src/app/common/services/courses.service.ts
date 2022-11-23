@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Course } from '../models/course';
 
 const BASE_URL = "http://localhost:3000";
@@ -13,7 +14,7 @@ export class CoursesService {
   constructor(private http: HttpClient) {}
 
   all() {
-    return this.http.get(this.getUrl());
+    return this.http.get(this.getUrl()) as Observable<Course[]>;
   }
 
   find(id: string) {
