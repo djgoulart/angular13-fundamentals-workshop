@@ -11,6 +11,10 @@ import { CoursesComponent } from './courses/courses.component';
 import { FormsModule } from '@angular/forms';
 import { CoursesListComponent } from './courses/courses-list/courses-list.component';
 import { CoursesDetailsComponent } from './courses/courses-details/courses-details.component';
+import { AdminComponent } from './examples/admin/admin.component';
+import { AdminVacationComponent } from './examples/admin/admin-vacation/admin-vacation.component';
+import { AdminPayrollComponent } from './examples/admin/admin-payroll/admin-payroll.component';
+import { ExamplesComponent } from './examples/examples.component';
 
 @NgModule({
   imports: [
@@ -21,8 +25,8 @@ import { CoursesDetailsComponent } from './courses/courses-details/courses-detai
     MaterialModule,
     HttpClientModule,
   ],
-  declarations: [AppComponent, HomeComponent, CoursesComponent, CoursesListComponent, CoursesDetailsComponent],
+  declarations: [AppComponent, HomeComponent, CoursesComponent, CoursesListComponent, CoursesDetailsComponent, AdminComponent, AdminVacationComponent, AdminPayrollComponent, ExamplesComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
